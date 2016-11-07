@@ -4,8 +4,6 @@ get('/') do
   "Hello World"
 end
 
-get('/:name') do
-  @name = params[:name].capitalize
-
-  erb :hello
+get('/form') do
+  erb:form
 end
