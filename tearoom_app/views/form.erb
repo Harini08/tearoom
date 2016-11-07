@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html>
 <body>
+<link rel="stylesheet" type="text/css" href="eventslist.css">
+<style>
+head {
+   color: black;
+   font-family: Georgia;
+   font-size: 100%;
+}
+p  {
+   color: black;
+   font-family: Helvetica;
+   font-size: 100%;
+   padding-left: 50px;
+}
+body {
+   padding-left: 50px;
+   padding-top: 50px;
+   color: purple;
+   font-family: Helvetica;
+   font-size: 100%;
+ }
+
+</style>
 
 <form action="/events" method="POST">
- 
+
   What:
-  <input type="text" name="eventName" value="Name of Your Event">
+<input type="textbox" name="eventName" style="color:#888; width:200px;" value="Name of Your Event" onfocus="this.value=''" onblur="inputBlur(this)" />
   <br><br>
 
-  Who:
-  <input type="text" name="organisation" value="Name of Your Organisation">
+  <div>
+  <div>Who:</div>
+  <div><input type="textbox" name="organisation" style="color:#888; width:200px;" value="Name of Your Organisation" onfocus="this.value=''" onblur="inputBlur(this)">
   <br>
-  <input type="text" name="organisation" value="Who Can Attend">
+  <input type="textbox" name="organisation" style="color:#888; width:200px;" value="Who Can Attend" onfocus="this.value=''" onblur="inputBlur(this)">
+  </div></div>
   <br><br>
 
   Why:
-  <input type="text" name="summary" value="Tell us a bit about it">
+  <input type="textbox" name="summary" style="color:#888; width:200px;" value="Tell Us a Bit about It" onfocus="this.value=''" onblur="inputBlur(this)">
   <br><br>
 
   When:
-  <input type="text" name="date" value="Date & Time">
+  <input type="textbox" name="date" style="color:#888; width:200px;" value="Date & Time" onfocus="this.value=''" onblur="inputBlur(this)">
   <br><br>
-  
+
   Where:
-  <input type="text" name="place" value="Location">
+  <input type="textbox" name="place" style="color:#888; width:200px;" value="Location" onfocus="this.value=''" onblur="inputBlur(this)">
   <br><br>
 
   Contact:
-  <input type="text" name="contact" value="Info Email">
+  <input type="textbox" name="contact" style="color:#888; width:200px;" value="Info Email" onfocus="this.value=''" onblur="inputBlur(this)">
   <br><br>
 
   <input type="submit" name="submitButton" value="Submit Your Event!">
 </form>
-
+<p>
 Please contact tearoom if you have any questions or queries.
-
+</p>
 </body>
 </html>
