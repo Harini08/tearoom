@@ -13,15 +13,13 @@ get('/form') do
 end
 
 post('/events') do
-  @eventName=params[:eventName]
-
-  erb:events
+  params.to_s
 end
 
 
-get('/events') do
-   erb:events
- end
+# get('/events') do
+#   erb:events
+# end
 
 
 # get - displays the form
