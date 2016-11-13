@@ -1,4 +1,12 @@
 require 'sinatra'
+require 'mongo'
+require 'json/ext'
+require 'json'
+
+configure do
+  db = Mongo::Client.new(['127.0.0.1:27017'], :database => 'events_database')
+  set :mongo_db, db[:events_database]
+end
 
 get('/') do
   "Hello World"
@@ -13,14 +21,23 @@ get('/form') do
 end
 
 post('/events') do
+  new_event = { eventName: params[:eventName] }
+  result = settings.mongo_db.insert_one new_event
   @eventName=params[:eventName]
-
+  @organisation=params[:organisation]
+  @date=params[:date]
+  @place=params[:place]
   erb:events
+end
+
+get '/lists' do
+  settings.mongo_db.find.to_a.to_json
 end
 
 
 get('/events') do
-   erb:events
+  @events = JSON.parse(settings.mongo_db.find.to_a.to_json)
+  erb:events
  end
 
 
