@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Shrikhand" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="eventslist.css">
 <style>
-head {
-   color: black;
-   font-family: Georgia;
-   font-size: 100%;
-}
-p  {
-   color: black;
-   font-family: Helvetica;
-   font-size: 100%;
-   padding-left: 50px;
-}
+
 body {
    padding-left: 50px;
    padding-top: 50px;
-   color: purple;
-   font-family: Helvetica;
-   font-size: 100%;
+   font-family: 'Lato', sans-serif;
  }
 
+h1 {
+ font-size: 50px;
+ font-family: 'Shrikhand', cursive;
+ }
+
+ p {
+    max-width: 350px;
+    color: black;
+    font-weight: 200;
+    padding-left: 0;
+ }
+
+.main-color{
+color: purple;
+}
+
+.column{
+float: left
+}
+
 </style>
+</head>
+<body>
+<div class="column">
+<h1 class="main-color">
+tearoom
+</h1>
+<p>
+Fancy a cuppa?
+</p>
+<p>
+Let the world know about the tech event you are hosting.
+By simply submitting the details of your tech event to tearoom, you will get
+lots of coders and people interested in tech join in the party.
+</p>
 
-<h1> Tearoom Form </h1>
-
-<form action="/events" method="POST">
+<form action="/events" method="POST" class="main-color">
 
   What:
 <input type="textbox" name="eventName" style="color:#888; width:200px;" value="Name of Your Event" onfocus="this.value=''" onblur="inputBlur(this)" />
@@ -35,7 +56,11 @@ body {
   <div>
   <div>Who:</div>
   <div><input type="textbox" name="organisation" style="color:#888; width:200px;" value="Name of Your Organisation" onfocus="this.value=''" onblur="inputBlur(this)">
-  <br><br>
+
+  <br>
+  <input type="textbox" name="organisation" style="color:#888; width:200px;" value="Who Can Attend" onfocus="this.value=''" onblur="inputBlur(this)">
+  </div></div>
+  <br>
 
   Why:
   <input type="textbox" name="summary" style="color:#888; width:200px;" value="Tell Us a Bit about It" onfocus="this.value=''" onblur="inputBlur(this)">
@@ -54,9 +79,13 @@ body {
   <br><br>
 
   <input type="submit" name="submitButton" value="Submit Your Event!">
-</form>
-<p>
-Please contact tearoom if you have any questions or queries.
-</p>
+  </form>
+  <p>
+  Please contact tearoom if you have any questions or queries.
+  </p>
+  </div>
+  <div class="column">
+  <img src="img/teacups1.jpg" width="220"/>
+  </div>
 </body>
 </html>
