@@ -24,9 +24,19 @@ post('/events') do
   new_event = { eventName: params[:eventName] }
   result = settings.mongo_db.insert_one new_event
   @eventName=params[:eventName]
+
+  new_organisation = { organisation: params[:organisation] }
+  result = settings.mongo_db.insert_one new_organisation
   @organisation=params[:organisation]
+
+  new_date = { date: params[:date] }
+  result = settings.mongo_db.insert_one new_date
   @date=params[:date]
+
+  new_place = { place: params[:place] }
+  result = settings.mongo_db.insert_one new_place
   @place=params[:place]
+
   erb:events
 end
 
